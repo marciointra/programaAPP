@@ -109,19 +109,22 @@ public class Main {
     public static void substituirPrimos(int[][] matriz) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
-                if (ehPrimo(matriz[i][j])) {
+                if (Primo(matriz[i][j])) {
                     matriz[i][j] = -1;
                 }
             }
         }
     }
 
-    public static boolean ehPrimo(int num) {
-        if (num <= 1){
-        return false;
+    public static boolean Primo(int num) {
+        if (num <= 1) {
+            return false;
+        }
         for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) return false;
+            if (num % i == 0) {
+                return false;
             }
         }
         return true;
     }
+}
